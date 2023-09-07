@@ -220,15 +220,40 @@ body {
 	border-radius: 30px;
 }
 			
-.sign-up, .login {
+.sign-up {
 			
 	border: none;
+
+	white-space: nowrap;
 	
-	width: 50%;
+	width: 20%;
 				
 	background-color: #FFDB58;
 				
-	padding: 5px 50px;
+	padding: 5px 5px;
+			
+	text-align: center;
+				
+	text-decoration: none;			
+				
+	font-size: 16px;
+				
+	margin: 2px 2px;
+				
+	cursor: pointer;
+
+	border-radius: 30px;
+}
+
+.login {
+			
+	border: none;
+	
+	width: 20%;
+				
+	background-color: #4CAF50;
+				
+	padding: 5px 5px;
 			
 	text-align: center;
 				
