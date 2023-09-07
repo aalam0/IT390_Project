@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+    <head>
+        <title>Mason Lost and Found</title>
+        <style>
+            /* Your existing CSS styles here */
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="signupForm">
+                <section id="home" class="hero">
+                    <center><img src="George_Mason_University_Logo.jpg" alt="GMU"></center>
+                </section>
+
+                <div>
+                    <center><h1> Welcome to Mason Lost and Found</h1></center>
+                    <center><p> A place to report any lost items into the Patriot Community</p></center>
+                </div>
+
+                <form id="signupForm" onsubmit="return validateForm()">
+                    <center>
+                        <div class= "sign-up">    
+                            <button class="sign-up" onclick="signUpClicked()">
+                                Sign Up
+                            </button>
+                        </div>
+                    </center>
+
+                    <br>
+                    <center>
+                        <div class= "login">    
+                            <button class="login">
+                                Login
+                            </button>
+                        </div>
+                    </center>
+
+                    <br><br><br>
+
+                    <div>
+                        <center><h4>Click below to view our Lost and Found on Google Maps </h4></center>
+                        <center>
+                            <a href="https://goo.gl/maps/7MoDPJKcUc5SwWxJ8" target="_blank">
+                                <img src="google-maps.jpg" alt="GMU" id="qrCodeImage" onclick="openGoogleMaps()">
+								
+								
+                            </a>
+                        </center>
+                    </div>
+					<center><h4>Or Scan our QR Code </h4></center>
+					<center><img src="qr-code.png" alt="GMU"></center>
+
+                    <br><br><br>
+                    <center>
+                        <div>
+                            <p>By logging on, you agree to the <a href="TermsMasonSafe.html" class="terms">Terms of Service</a> and <a href="PolicyMasonSafe.html" class="policy">Privacy Policy</a></p>
+                        </div>
+                    </center>    
+
+                    <div>
+                        <section id="contact" class="contact-section">
+                            <center><a href = "Forgot your password?" class="forgot-password"</a></center>
+                            <center><p>Forgot your password?</p></center>
+                            <center><a href="mailto:info@MasonSafe.com" class="cta-button">Need Help?</a></center>
+                        </section>
+                    </div>
+                
+
+                <div class="footer">
+                    <center><b><p>&copy; 2023 IT 390 Team 4. All rights reserved. </p></b></center>
+                </div>
+			
+			</form>
+            
+			</div>
+			
+        </div>
+
+        <script>
+            function signUpClicked() {
+                // Perform actions when Sign Up button is clicked
+                alert("Sign Up button clicked!");
+                // Add your sign-up logic here
+				window.open('sign-up-page.html', '_blank');
+            }
+
+            function openGoogleMaps() {
+                // Perform actions when the QR code is clicked
+                window.open('https://goo.gl/maps/7MoDPJKcUc5SwWxJ8', '_blank');
+            }
+			
+			function validateForm() {
+			var username = document.getElementById("username").value;
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var confirmPassword = document.getElementById("confirmPassword").value;
+			var errorElement = document.getElementById("error");
+
+			if (password !== confirmPassword) {
+				errorElement.textContent = "Passwords do not match!";
+				return false;
+			} 
+			else {
+			errorElement.textContent = "";
+			alert("Sign-up successful!");
+			window.location.href = "sign-up-page.html"; // Redirect to another page
+			return true;
+				}
+			}
+        </script>
+    </body>
+</html>
