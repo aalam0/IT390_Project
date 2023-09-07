@@ -38,17 +38,18 @@
                     </center>
 
                     <br><br><br>
+					
+					<!-- server side Using include Statements (Server-Side Includes):
+					If you're working with a server (e.g., Apache),
+					you might have the option to use server-side includes to include one HTML file into another.
+					For example, if you're using Apache, you could create an .shtml file and use an include directive:  -->
+					<!-- New section for the map -->
+                <center><iframe src="geolocation.html" width="600" height="400"></iframe></center>
 
-                    <div>
-                        <center><h4>Click below to view our Lost and Found on Google Maps </h4></center>
-                        <center>
-                            <a href="https://goo.gl/maps/7MoDPJKcUc5SwWxJ8" target="_blank">
-                                <img src="google-maps.jpg" alt="GMU" id="qrCodeImage" onclick="openGoogleMaps()">
-								
-								
-                            </a>
-                        </center>
-                    </div>
+				
+				
+					
+				
 					<center><h4>Or Scan our QR Code </h4></center>
 					<center><img src="qr-code.png" alt="GMU"></center>
 
@@ -110,5 +111,21 @@
 				}
 			}
         </script>
+		
+		<script>
+    function initMap() {
+        // ... (your existing map code)
+    }
+
+    window.initMap = initMap;
+</script>
+
+<style>
+    #map {
+        height: 500px; /* Set the height of the map */
+    }
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly" defer></script>
     </body>
 </html>
