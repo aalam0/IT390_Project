@@ -1,468 +1,68 @@
-<!doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="stylesheet.css" type="text/css" />
-	<head>
-		<title>
-			Mason Lost and Found 
-		</title>
-		<style>
-			
-			body{font-family: sans-serif, Arial, Helvetica;}
-			
-			.main{
+<head>
+  <link rel="stylesheet" href="style2.css" type="text/css" />
+  <title>Mason Lost and Found</title>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="remove.png" alt="GMU" />
+    </div>
+    <br>
+	<br>
+	<br>
+	<br>
+    <form id="signupForm" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" required minlength="4" maxlength="50" />
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" required minlength="4" maxlength="50" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="text" id="email" name="email" required minlength="4" maxlength="50" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required minlength="4" maxlength="50" />
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required />
+      </div>
+      <p class="error" id="error"></p>
+      <div class="form-group">
+		<center>
+        <button class="submit-button" type="submit" >Submit</button>
+		</center>
+      </div>
+    </form>
+    <p>By logging on, you agree to the <a href="TermsMasonSafe.html" class="terms">Terms of Service</a> and <a href="PolicyMasonSafe.html" class="policy">Privacy Policy</a></p>
+    <div class="footer">
+      &copy; 2023 IT 390 Team 4. All rights reserved.
+    </div>
+  </div>
 
-				display: inline-flex;
+  <script>
+    function validateForm() {
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      var errorElement = document.getElementById("error");
 
-				width: 100%;
-
-				height: 1100px;
-
-				border: 2px solid black;
-				
-				background-color: white;
-				}
-			
-			.head{
-
-				display: inline-flex;
-
-				width:100%;
-
-				height:50px;
-
-				border-bottom:3px solid black;
-				background-color: grey;}
-			
-			.menubox{
-				
-				background-color: #555555; /* Green */
-				
-				border: none;
-				
-				color: white;
-  
-				margin: 4px 2px;
-				
-				text-align: center;
- 
-				text-decoration: none;
- 
-				display: inline-block;
-  
-				font-size: 16px;
-  
-  
-				cursor: pointer;
-			}
-			
-			.menubox2 {
-			
-				background-color: #555555;
-			
-				border: none;
-				
-				color: white;
-  
-				margin: 4px 2px;
- 
-				text-align: center;
- 
-				text-decoration: none;
- 
-				display: inline-block;
-  
-				font-size: 16px;
-  
-				
-  
-				cursor: pointer;
-			
-			} /* Blue */
-			
-			.menubox3 {
-			
-				background-color: #555555;
-				
-				border: none;
-				
-				color: white;
-  
-				margin: 4px 2px;
- 
-				text-align: center;
- 
-				text-decoration: none;
- 
-				display: inline-block;
-  
-				font-size: 16px;
-  
-				
-  
-				cursor: pointer;
-				} /* Red */ 
-			
-			.menubox4 {
-				
-				background-color: #555555; color: black;
-			
-				border: none;
-				
-				color: white;
-  
-				margin: 4px 2px;
- 
-				text-align: center;
- 
-				text-decoration: none;
- 
-				display: inline-block;
-  
-				font-size: 16px;
-  
-				
-  
-				cursor: pointer;
-			
-			} /* Gray */ 
-			
-			.menubox5 {
-			
-				background-color: #555555;
-				
-				border: none;
-				
-				color: white;
-  
-				margin: 4px 2px;
- 
-				text-align: center;
- 
-				text-decoration: none;
- 
-				display: inline-block;
-  
-				font-size: 16px;
-  
-				
-  
-				cursor: pointer;
-			
-			
-			} /* Black */
-				
-			}
-			.menubox6 {
-			
-				background-color: #555555;
-				
-				border: none;
-				
-				color: white;
-  
-				margin: 4px 2px;
- 
-				text-align: center;
- 
-				text-decoration: none;
- 
-				display: inline-block;
-  
-				font-size: 16px;
-  
-				
-  
-				cursor: pointer;
-			
-			
-			} /* Black */
-				
-			}
-			
-			
-			.dropdown {
-				
-				
-				
-				position: relative;
-				
-				display: inline-block;
-			}
-			
-			
-			
-			.dropdown-content {
-				
-				display: none;
-				
-				position: absolute;
-				
-				background-color: #f9f9f9;
-				
-				min-width: 160px;
-				
-				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-				
-				padding: 12px 16px;
-				
-				z-index: 1;
-			}
-
-
-
-			.dropdown:hover .dropdown-content {
-				
-				display: block;
-			}
-			
-			
-			
-			.explanation {
-				
-				text-align: in-line;	
-				
-				display: inline-box;
-				
-				position: absolute;
-				
-				margin: 50px 2px;
-			
-			}
-			
-			.footer {
-				
-				height:50px;
-				
-				width: 100%;
-				
-				background-color: green;
-			
-				opacity: 0.8;
-				
-				color:black;
-			
-			}
-			
-			.submit {
-			
-				border: none;
-				
-				background-color: #4CAF50;/* Green */
-				
-				padding: 5px 100px;
-				
-				text-align: center;
-				
-				text-decoration: none;
-				
-				display: inline-block;
-				
-				font-size: 16px;
-				
-				margin: 2px 2px;
-				
-				cursor: pointer;
-				border-radius: 30px;
-			}
-			
-			.sign-up {
-			
-				border: none;
-				
-				background-color: #FFDB58;
-				
-				padding: 5px 100px;
-				
-				text-align: center;
-				
-				text-decoration: none;
-				
-				display: inline-block;
-				
-				font-size: 16px;
-				
-				margin: 2px 2px;
-				
-				cursor: pointer;
-				border-radius: 30px;
-			}
-			
-			 input[type=text] {
-				
-				padding: 5px;
-        
-				border: 2px solid #cccccc;
-       
-				-webkit-border-radius: 5px;
-       
-				border-radius: 5px;
-				}
-			input[type=text]:focus {
-        
-			border-color: #33333;
-			}
-			
-			input[type=submit] {
-        
-			padding: 5px 15px;
-			
-			background: #99e0b2;
-			
-			border: 0 none;
-       
-			cursor: pointer;
-			
-			-webkit-border-radius: 5px;
-			
-			border-radius: 5px;
-			}
-			
-		</style>
-
-	</head>
-
-	<body>
-		<div class="main">
-		
-			<div class="head">
-			
-				<button class="menubox">
-				
-				<center>HOME </center>
-				</button>
-				
-				
-				<button class="menubox5">
-				ABOUT 
-				</button>
-				
-				<button class="menubox4">
-				CONTACT US
-				</button>
-				
-				<button class="menubox4">
-				SIGN IN
-				</button>
-				
-			</div>
-			
-			
-			<div class="explanation">
-				<section id="home" class="hero">
-				
-					
-					<center><img src="George_Mason_University_Logo.jpg" alt="GMU"></center>
-					
-				</section>
-			
-				
-			<div>
-				<center><h1> Welcome to Mason Lost and Found</h1></center>
-				<center><h3> A place to report any lost items  into the Patriot Community </h3></center>
-
-			</div>
-			
-			
-			<form id="signupForm" onsubmit="return validateForm()">
-				<div class= "name">	
-				<center>
-					<label for="firstname">First Name</label>
-					<input type="text" id="firstname" name="firstname" required minlength="4" maxlength="50" size="40" />
-				<br>
-				<br>
-				<label for="lastname">Last Name</label>
-				<input type="text" id="lastname" name="lastname" required minlength="4" maxlength="50" size="40" />
-				
-				<br>
-				<br>
-				<label for="email">Email Address</label>
-				<input type="text" id="email" name="email" required minlength="4" maxlength="50" size="40" />
-				
-				<br>
-				<br>
-				<label for="password">Password</label>
-				<input type="text" id="password" name="password" required minlength="4" maxlength="50" size="40" />
-				
-				<br>
-				<br>
-				<label for="confirmPassword">Confirm Password:</label>
-				<input type="password" id="confirmPassword" name="confirmPassword" required>
-				
-				<br>
-				<br>
-				<p class="error" id="error"></p>
-				
-				</center>
-				</div>
-			
-			
-			<br>
-			<center>
-				<div class= "submit">	
-			
-				<button class="submit">
-				Submit
-				</button>
-				
-				</div>
-				</center>
-			</form>
-			
-			
-			
-			<br>
-			
-				<div>
-				
-					<center><p>By loggin on, you agree to the <a href="TermsMasonSafe.html" class="terms">Terms of Service</a> and <a href="PolicyMasonSafe.html" class="policy">Privacy Policy</a></p></center>
-				<div>
-				
-				
-				
-				
-			
-			
-				<div>
-					<section id="contact" class="contact-section">
-					<center><a href = "Forgot your password?" class="forgot-password"</a></center>
-					<center><p>Forgot your password?</p></center>
-					
-					
-					<center><a href="mailto:info@MasonSafe.com" class="cta-button">Need Help?</a></center>
-					
-					</section>
-				
-				</div>
-		
-				<div class="footer">
-				<center><b><p>&copy; 2023 IT 390 Team 4. All rights reserved. </p></b></center>
-		
-				</div>
-		
-			</div>
-			
-			<script>
-			function validateForm() {
-            var username = document.getElementById("username").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var confirmPassword = document.getElementById("confirmPassword").value;
-            var errorElement = document.getElementById("error");
-
-            if (password !== confirmPassword) {
-                errorElement.textContent = "Passwords do not match!";
-                return false;
-            } else {
-                errorElement.textContent = "";
-                alert("Sign-up successful!");
-                // You can submit the form to a server here.
-                return true;
-				}
-			}
-			</script>
-
-		
-	</body>
-
+      if (password !== confirmPassword) {
+        errorElement.textContent = "Passwords do not match!";
+        return false;
+      } else {
+        errorElement.textContent = "";
+        alert("Sign-up successful!");
+        return true;
+      }
+    }
+  </script>
+</body>
 </html>
